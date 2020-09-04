@@ -13,9 +13,13 @@ npm install ffmpeg
 for unbuntu:
 
 sudo apt-get install build-essential
+
 npm i node-pre-gyp -g
+
 npm rebuild @tensorflow/tfjs-node --build-from-source
+
 npm install canvas
+
 run:
 ---
 node posetest.js
