@@ -129,10 +129,23 @@ const port = process.env.PORT || 5000;
 app.get('/poseAPI/:video', async (req, res) => {
     console.log(req.params.video)
 
-    video = req.params.video + '.mov'
-    console.log(video)
+    const http = require('https');
+    const fs = require('fs');
+    videourl="https://videotestvirtrum.s3.amazonaws.com/IMG_1998.mp4"
+    dest="download2.mp4"
+    
+    /***
+     * Download video from url
+     * 
+     * */
+    const file = fs.createWriteStream(dest);
+    const request = http.get(videourl, function(response) {
+    response.pipe(file);
+    });
     //senddata=JSON.stringify(await posenetWrapper(video_name))
     //console.log(senddata)
+    video=dest
+    console.log(video)
     //res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(await posenetWrapper(video)))
     //res.sendfile('save2.json'); 
