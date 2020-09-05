@@ -12,13 +12,20 @@ npm install ffmpeg
 
 for unbuntu:
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+. ~/.nvm/nvm.sh
+
+nvm install node
+
+
 sudo apt-get install build-essential
 
 npm i node-pre-gyp -g
 
 npm rebuild @tensorflow/tfjs-node --build-from-source
 
-npm install canvas
+npm install 
 
 run:
 ---
